@@ -1,0 +1,27 @@
+lockfile_version: '1'
+dependencies: []
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/rules/python-style.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:c27cdcea93e8e0c6c0ddcee5385b0b42a8da585aa2a2146c69af8df4f8dafa75
+- kind: project-relative
+  target: copilot
+  value: .github/instructions/python-style.instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:9c6d5edaa773385ac33a52e703794bd8231ff1076014ef83303993aff87bbb94
+local_deployed_files:
+- .claude/rules/python-style.md
+- .github/instructions/python-style.instructions.md
+local_deployed_file_hashes:
+  .claude/rules/python-style.md: sha256:c27cdcea93e8e0c6c0ddcee5385b0b42a8da585aa2a2146c69af8df4f8dafa75
+  .github/instructions/python-style.instructions.md: sha256:9c6d5edaa773385ac33a52e703794bd8231ff1076014ef83303993aff87bbb94
