@@ -11,6 +11,24 @@ deployments:
   active_owner: .
   content_hash: sha256:c27cdcea93e8e0c6c0ddcee5385b0b42a8da585aa2a2146c69af8df4f8dafa75
 - kind: project-relative
+  target: claude
+  value: .claude/skills/code-review-checklist
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/code-review-checklist/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:65c71a17ef3c20c3903deba534bc1c29f335ff906a123f947d8a9e167c833464
+- kind: project-relative
   target: copilot
   value: .github/instructions/python-style.instructions.md
   runtime: null
@@ -19,9 +37,67 @@ deployments:
   - .
   active_owner: .
   content_hash: sha256:9c6d5edaa773385ac33a52e703794bd8231ff1076014ef83303993aff87bbb94
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/code-review-checklist
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/code-review-checklist/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:65c71a17ef3c20c3903deba534bc1c29f335ff906a123f947d8a9e167c833464
+- kind: uri
+  target: mcp
+  value: fetch
+  runtime: claude
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: uri
+  target: mcp
+  value: fetch
+  runtime: copilot
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+mcp_servers:
+- fetch
+mcp_configs:
+  fetch:
+    name: fetch
+    transport: stdio
+    args:
+    - -y
+    - '@modelcontextprotocol/server-fetch'
+    registry: false
+    command: npx
+mcp_target_servers:
+  claude:
+  - fetch
+  copilot:
+  - fetch
 local_deployed_files:
+- .agents/skills/code-review-checklist
+- .agents/skills/code-review-checklist/SKILL.md
 - .claude/rules/python-style.md
+- .claude/skills/code-review-checklist
+- .claude/skills/code-review-checklist/SKILL.md
 - .github/instructions/python-style.instructions.md
 local_deployed_file_hashes:
+  .agents/skills/code-review-checklist/SKILL.md: sha256:65c71a17ef3c20c3903deba534bc1c29f335ff906a123f947d8a9e167c833464
   .claude/rules/python-style.md: sha256:c27cdcea93e8e0c6c0ddcee5385b0b42a8da585aa2a2146c69af8df4f8dafa75
+  .claude/skills/code-review-checklist/SKILL.md: sha256:65c71a17ef3c20c3903deba534bc1c29f335ff906a123f947d8a9e167c833464
   .github/instructions/python-style.instructions.md: sha256:9c6d5edaa773385ac33a52e703794bd8231ff1076014ef83303993aff87bbb94
